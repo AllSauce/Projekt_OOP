@@ -2,7 +2,7 @@ using System;
 
 namespace ThiccShapes
 {
-    class Point
+    public class Point
     {
         public Point(int aX, int aY, int aPointScore)
         {
@@ -10,8 +10,8 @@ namespace ThiccShapes
             Y = aY;
             PointScore = aPointScore;
         }
-        int X;
-        int Y;
-        int PointScore;
+        public int X {get; private set;}
+        public int Y {get; private set;}
+        public int PointScore {get; private set;}
     }
 }

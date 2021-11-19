@@ -2,7 +2,7 @@ using System;
 
 namespace ThiccShapes
 {
-    interface IShape
+    public interface IShape
     {       
         bool Inside(int x, int y);
     }

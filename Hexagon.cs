@@ -2,11 +2,13 @@ using System;
 
 namespace ThiccShapes
 {
-    class Hexagon
+    public class Hexagon : IShape
     {
+        public static int ShapeScore = 1;
         public Hexagon(int x, int y, int Perimiter)
         {
             
         }
+        public bool Inside(int x, int y){return true;}
     }   
 }

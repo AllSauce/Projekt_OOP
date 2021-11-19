@@ -11,14 +11,4 @@ namespace ThiccShapes
 
     }
 
-
-
-
-
-
-
-
-
-
-
 }

@@ -2,12 +2,11 @@ using System;
 
 namespace ThiccShapes
 {
-    public class Program
+    class Hexagon
     {
-        static void Main(string[] args)
+        public Hexagon(int x, int y, int Perimiter)
         {
             
         }
-    }
-
+    }   
 }

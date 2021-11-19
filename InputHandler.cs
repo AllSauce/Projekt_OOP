@@ -5,11 +5,13 @@ namespace ThiccShapes
 {
     public static class Inputhandler
     {
-        //public static Tuple<List<Point>, List<IShape>> HandleInput()
-        //{
+        public static Tuple<List<Point>, List<IShape>> HandleInput(string[] args)
+        {
             
+            var tuple = Tuple.Create<Inputhandler.GetPoints(args[0], Inputhandler.GetShapes(args[1]));
+            return tuple;
             
-        //}
+        }
         
         public static List<Point> GetPoints(string s)
         {

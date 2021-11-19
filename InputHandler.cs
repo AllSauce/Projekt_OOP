@@ -8,7 +8,7 @@ namespace ThiccShapes
         //public static Tuple<List<Point>, List<IShape>> HandleInput()
         //{
             
-
+            
         //}
         
         public static List<Point> GetPoints(string s)
@@ -33,10 +33,8 @@ namespace ThiccShapes
                 catch
                 {
                     throw new UserInputException();
-                }              
-                
-            }
-            
+                }                              
+            }           
             return points;
         }
 
@@ -48,15 +46,12 @@ namespace ThiccShapes
             
             List<IShape> Shapes = new List<IShape>();
             foreach(string strung in args)
-            {
-                
-                string[] stringArray = strung.Split(',');
-                
+            {                
+                string[] stringArray = strung.Split(',');                
                 for(int i = 0; i < stringArray.Length; i++)
                 {
                     stringArray[i] = stringArray[i].Trim(' ');
                 }
-
                 switch (stringArray[0])
                 {
                     case "CIRCLE":
@@ -81,13 +76,9 @@ namespace ThiccShapes
                         Shapes.Add(new Octagon(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])));
                         break;
                     default :
-                        throw new UserInputException(); 
-                        
-                }
-                    
-
+                        throw new UserInputException();                         
+                }                  
             }
-            
             return Shapes;
         }
         

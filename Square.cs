@@ -5,7 +5,7 @@ namespace ThiccShapes
     public class Sqaure : IShape
     {
         public static int ShapeScore = 1;
-        public Sqaure(int x, int y, int Perimiter)
+        public Sqaure(int x, int y, int Perimeter)
         {
 
         }

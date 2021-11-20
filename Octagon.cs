@@ -5,7 +5,7 @@ namespace ThiccShapes
     public class Octagon : IShape
     {
         public static int ShapeScore = 1;
-        public Octagon(int x, int y, int Perimiter)
+        public Octagon(int x, int y, int Perimeter)
         {
             
         }

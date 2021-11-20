@@ -8,6 +8,7 @@ namespace ThiccShapes
         public Circle(int x, int y, int Perimiter)
         {
                 
+
         }
         public bool Inside(int x, int y){return true;}
     }

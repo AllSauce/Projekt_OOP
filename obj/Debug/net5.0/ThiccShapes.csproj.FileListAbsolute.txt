@@ -14,3 +14,11 @@ C:\Users\Oscar\Documents\GitHub\Projekt_OOP\obj\Debug\net5.0\ThiccShapes.dll
 C:\Users\Oscar\Documents\GitHub\Projekt_OOP\obj\Debug\net5.0\ref\ThiccShapes.dll
 C:\Users\Oscar\Documents\GitHub\Projekt_OOP\obj\Debug\net5.0\ThiccShapes.pdb
 C:\Users\Oscar\Documents\GitHub\Projekt_OOP\obj\Debug\net5.0\ThiccShapes.genruntimeconfig.cache
+C:\Users\Oscar\Source\Repos\Projekt_OOP\obj\Debug\net5.0\ThiccShapes.csproj.AssemblyReference.cache
+C:\Users\Oscar\Source\Repos\Projekt_OOP\obj\Debug\net5.0\ThiccShapes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oscar\Source\Repos\Projekt_OOP\obj\Debug\net5.0\ThiccShapes.AssemblyInfoInputs.cache
+C:\Users\Oscar\Source\Repos\Projekt_OOP\obj\Debug\net5.0\ThiccShapes.AssemblyInfo.cs
+C:\Users\Oscar\Source\Repos\Projekt_OOP\obj\Debug\net5.0\ThiccShapes.csproj.CoreCompileInputs.cache
+C:\Users\Oscar\Source\Repos\Projekt_OOP\obj\Debug\net5.0\ThiccShapes.dll
+C:\Users\Oscar\Source\Repos\Projekt_OOP\obj\Debug\net5.0\ref\ThiccShapes.dll
+C:\Users\Oscar\Source\Repos\Projekt_OOP\obj\Debug\net5.0\ThiccShapes.pdb

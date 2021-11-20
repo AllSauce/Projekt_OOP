@@ -7,8 +7,9 @@ namespace ThiccShapes
     {
         public static Tuple<List<Point>, List<IShape>> HandleInput(string[] args)
         {
-            
-            var tuple = Tuple.Create<Inputhandler.GetPoints(args[0], Inputhandler.GetShapes(args[1]));
+            List<Point> points = GetPoints(args[0]);
+            List<IShape> shapes = GetShapes(args[1]);
+            Tuple<List<Point>, List<IShape>> tuple = new Tuple<List<Point>, List<IShape>>(points, shapes);
             return tuple;
             
         }

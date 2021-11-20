@@ -6,7 +6,7 @@ namespace ThiccShapes
     class Algorithm
     {
 
-        //How the fuck do we find the vertices. And how will we take care of the circle ;(
+        //How the fuck do we find the vertices.
         public ArrayList Vertices()
         {
             ArrayList coordinates = new ArrayList();
@@ -38,6 +38,37 @@ namespace ThiccShapes
             double h = (2*A)/side;
 
             return h;
+        }
+
+        //Could be put into circle class, this should work 
+        //It checks if distance between point and mid is less than radius
+        //If it is, then it is inside of circle
+        public bool IsInsideCircle(int midX, int midY, int pointX, int pointY, int perimeter)
+        {
+            bool deep = false;
+
+            var R = perimeter/(2*Math.PI);
+            var dLat = ToRadians(pointX-midX);
+            var dLon = ToRadians(pointY-midY); 
+            var a = 
+                Math.Sin(dLat/2) * Math.Sin(dLat/2) +
+                Math.Cos(ToRadians(midX)) * Math.Cos(ToRadians(pointX)) * 
+                Math.Sin(dLon/2) * Math.Sin(dLon/2);
+
+            var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1-a)); 
+            var d = R * c;
+
+            if(d < R)
+            {
+                deep = true;
+            }
+
+            return deep;
+        }
+
+        double ToRadians(double deg) 
+        {
+            return deg * (Math.PI/180);
         }
 
     }

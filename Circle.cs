@@ -18,7 +18,12 @@ namespace ThiccShapes
         public bool Inside(int x, int y)
         {
             Console.WriteLine(Radius);
-            return true;
+            int XLenght = Math.Abs(x - X);
+            int YLenght = Math.Abs(y - Y);
+            double cLenght = Math.Sqrt((XLenght * XLenght) + (YLenght * YLenght));
+            if (cLenght < Radius) return true;
+            else return false;
+            
         }
     }
 

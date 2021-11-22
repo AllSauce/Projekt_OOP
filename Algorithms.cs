@@ -77,7 +77,7 @@ namespace ThiccShapes
             
             int angleSumm = 180 * (corners - 2);
             
-            list.Add(Tuple.Create(x, y + sideLength));
+            return null;
 
         }
     }

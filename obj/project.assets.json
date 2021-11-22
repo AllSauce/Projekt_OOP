@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Oscar\\Source\\Repos\\Projekt_OOP\\ThiccShapes.csproj",
+      "projectUniqueName": "C:\\Users\\Oscar\\Documents\\GitHub\\Projekt_OOP\\ThiccShapes.csproj",
       "projectName": "ThiccShapes",
-      "projectPath": "C:\\Users\\Oscar\\Source\\Repos\\Projekt_OOP\\ThiccShapes.csproj",
+      "projectPath": "C:\\Users\\Oscar\\Documents\\GitHub\\Projekt_OOP\\ThiccShapes.csproj",
       "packagesPath": "C:\\Users\\Oscar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Oscar\\Source\\Repos\\Projekt_OOP\\obj\\",
+      "outputPath": "C:\\Users\\Oscar\\Documents\\GitHub\\Projekt_OOP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Oscar\\AppData\\Roaming\\NuGet\\NuGet.Config",

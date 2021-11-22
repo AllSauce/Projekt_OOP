@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace ThiccShapes
 {
@@ -69,7 +70,15 @@ namespace ThiccShapes
         double ToRadians(double deg) 
         {
             return deg * (Math.PI/180);
-        }
+        }        
+        public List<Triangle> GetTriangles(double x, double y, int Perimeter, int corners)
+        {
+            double sideLength = Perimeter / corners;
+            
+            int angleSumm = 180 * (corners - 2);
+            
+            list.Add(Tuple.Create(x, y + sideLength));
 
+        }
     }
 }

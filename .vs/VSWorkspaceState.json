@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\bin\\Debug",
     "\\bin\\Debug\\net5.0",
-    "\\bin\\Release\\net5.0"
+    "\\bin\\Release",
+    "\\bin\\Release\\net5.0",
+    "\\bin\\Release\\net5.0\\ref",
+    "\\obj\\Debug",
+    "\\obj\\Release",
+    "\\obj\\Release\\net5.0",
+    "\\obj\\Release\\net5.0\\ref"
   ],
+  "SelectedNode": "\\.gitattributes",
   "PreviewInSolutionExplorer": false
 }

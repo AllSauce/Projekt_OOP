@@ -10,6 +10,7 @@ namespace ThiccShapes
             
             
             Algorithm.GetTriangles(4, 4, 32, 4);
+
             
             
             

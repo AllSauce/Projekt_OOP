@@ -1,0 +1,9 @@
+TODOLIST
+
+Lägg till i inputhandler för att hantera ändringar av shapescore
+
+Implemetera triangle.Inside
+
+Kommentera kod
+
+Implemetera Funktion för att räkna ut total poäng

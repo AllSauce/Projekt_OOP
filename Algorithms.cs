@@ -78,28 +78,34 @@ namespace ThiccShapes
             double sideLength = Perimeter / corners;
             List<Point> points = new List<Point>();
             int angleSumm = 180 * (corners - 2);   
-            double anglePerTurn = angleSumm  / corners;         
+                    
             double radianperTurn = ToRadians(angleSumm / corners);
             double hypotenus = (sideLength / 2) / Math.Cos(ToRadians(45))  ;
-            double initalY = y - Math.Sqrt((hypotenus * hypotenus) - ((sideLength / 2) * (sideLength / 2)));
+            double initalY = y - Math.Round(Math.Sqrt((hypotenus * hypotenus) - ((sideLength / 2) * (sideLength / 2))), 5);
             double initalX = x - sideLength / 2;
             Point initalPoint = new Point(initalX, initalY);
             points.Add(initalPoint);
+            Point centerPoint = new Point(x, y);
             for(int i = 0; i < corners - 1; i++)
             {
-                points.Add(RotatePoint(x, y, anglePerTurn, points[i]));
+                points.Add(RotatePoint(x, y, radianperTurn, points[i]));
             }
-
-            return null;
+            List<Triangle> triangles = new List<Triangle>();
+            for(int i = 1; i < points.Count; i++)
+            {
+                triangles.Add(new Triangle(points[i], points[i - 1], centerPoint));
+            }
+            triangles.Add(new Triangle(points[0], points[points.Count - 1], centerPoint));
+            return triangles;
             
         }
         
-        //Behlöver fixas
-        private static Point RotatePoint(double cx, double cy, double angle, Point p)
+        //Så jävla vacker :))))))))
+        private static Point RotatePoint(double cx, double cy, double radian, Point p)
         {
             //Sinus och Cosinus av vinkeln
-            double s = Math.Sin(ToRadians(angle));
-            double c = Math.Cos(ToRadians(angle));
+            double s = Math.Sin(radian);
+            double c = Math.Cos(radian);
 
             //Temporära variabler som kan förändras
             double temppX = p.X - cx;
@@ -112,7 +118,7 @@ namespace ThiccShapes
             xNew += cx;
             yNew += cy;
 
-            return new Point(xNew, yNew);
+            return new Point(Math.Round(xNew, 5), Math.Round(yNew, 5));
         }
 
         

@@ -70,15 +70,26 @@ namespace ThiccShapes
         double ToRadians(double deg) 
         {
             return deg * (Math.PI/180);
-        }        
+        }       
         public List<Triangle> GetTriangles(double x, double y, int Perimeter, int corners)
         {
             double sideLength = Perimeter / corners;
-            
+            List<Tuple<double, double>> points = new List<Tuple<double, double>>();
             int angleSumm = 180 * (corners - 2);
-            
+            int anglePerTurn = angleSumm / corners;
+            Point initalPoint;
+            if ((corners % 2) == 0)
+            {
+                
+            }
+            else
+            {
+                
+            }
             return null;
-
+            
         }
+
+        
     }
 }

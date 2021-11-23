@@ -6,10 +6,13 @@ namespace ThiccShapes
     {
         
         public static int ShapeScore = 1;
+        //Contancted to make standalone triangles
         public Triangle(int x, int y, int Perimeter)
         {
 
         }
+        //Contancted to make triangles that contruct other shapes
+        //Send null or anything to overloader
         public Triangle(int x, int y, int z, int Overloader)
         {
 

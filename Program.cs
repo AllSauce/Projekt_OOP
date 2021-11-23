@@ -7,9 +7,9 @@ namespace ThiccShapes
     {
         static void Main(string[] args)
         {
-            List<Point> points = Inputhandler.GetPoints("1,3,5; 4  , 13, 4;");
+            List<ComparisionPoint> points = Inputhandler.GetPoints("1,3,5; 4  , 13, 4;");
             //TESTING
-            foreach (Point p in points)
+            foreach (ComparisionPoint p in points)
             {
                 Console.WriteLine(p.X + p.Y + p.PointScore);
             }

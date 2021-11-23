@@ -6,7 +6,7 @@ namespace ThiccShapes
     {
         
         public static int ShapeScore = 1;
-        //Contancted to make standalone triangles
+        //Contancted to make standalone triangles from x, y and perimiter
         public Triangle(int x, int y, int Perimeter)
         {
 
@@ -17,11 +17,14 @@ namespace ThiccShapes
         {
 
             
-
+            
         }
 
 
         
-        public bool Inside(int x, int y){return true;}
+        public bool Inside(int x, int y)
+        {
+            return true;
+        }
     }
 }

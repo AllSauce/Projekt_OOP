@@ -4,14 +4,14 @@ namespace ThiccShapes
 {
     public class Point
     {
-        public Point(int aX, int aY)
+        public Point(double aX, double aY)
         {
             X = aX;
             Y = aY;
             
         }
-        public int X {get; private set;}
-        public int Y {get; private set;}
+        public double X {get; private set;}
+        public double Y {get; private set;}
         
     }
 }

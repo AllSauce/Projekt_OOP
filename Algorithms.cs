@@ -74,18 +74,15 @@ namespace ThiccShapes
         public List<Triangle> GetTriangles(double x, double y, int Perimeter, int corners)
         {
             double sideLength = Perimeter / corners;
-            List<Tuple<double, double>> points = new List<Tuple<double, double>>();
-            int angleSumm = 180 * (corners - 2);
-            int anglePerTurn = angleSumm / corners;
-            Point initalPoint;
-            if ((corners % 2) == 0)
-            {
-                
-            }
-            else
-            {
-                
-            }
+            List<Point> points = new List<Point>();
+            int angleSumm = 180 * (corners - 2);            
+            double radianperTurn = ToRadians(angleSumm / corners);
+            double hypotenus = (sideLength / 2) / Math.Cos(54);
+            double initalY = y - Math.Sqrt((hypotenus * hypotenus) - ((sideLength / 2) * (sideLength / 2)));
+            double initalX = x - sideLength / 2;
+            Point initalPoint = new Point(initalX, initalY);
+            points.Add(initalPoint);
+            
             return null;
             
         }

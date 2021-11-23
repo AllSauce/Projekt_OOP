@@ -10,6 +10,7 @@ namespace ThiccShapes
         {
             List<ComparisionPoint> points = GetPoints(args[0]);
             List<IShape> shapes = GetShapes(args[1]);
+            ChangeShapreScores(args[2]);
             Tuple<List<ComparisionPoint>, List<IShape>> tuple = new Tuple<List<ComparisionPoint>, List<IShape>>(points, shapes);
             return tuple;
         }
@@ -38,6 +39,52 @@ namespace ThiccShapes
                 }                              
             }           
             return points;
+        }
+        static void ChangeShapreScores(string s)
+        {
+            s = s.Trim(' ');
+            s = s.Remove(s.Length - 1);
+            string[] args = s.Split(';');
+
+            foreach(string arg in args)
+            {
+                string[] stringArray = arg.Split(',');                
+                for(int i = 0; i < stringArray.Length; i++)
+                {
+                    stringArray[i] = stringArray[i].Trim(' ');
+                }
+                try
+                {
+                    switch (stringArray[0])
+                    {
+                        case "CIRCLE":
+                            Circle.ShapeScore = Int32.Parse(stringArray[1]);
+                            break;
+                        case "TRIANGLE" :
+                            Triangle.ShapeScore = Int32.Parse(stringArray[1]);
+                            break;
+                        case "SQUARE" :
+                            Sqaure.ShapeScore = Int32.Parse(stringArray[1]);
+                            break;
+                        case "PENTAGON" :
+                            Pentagon.ShapeScore = Int32.Parse(stringArray[1]);
+                            break;
+                        case "HEXAGON" : 
+                            Hexagon.ShapeScore = Int32.Parse(stringArray[1]);
+                            break;
+                        case "HEPTAGON" :
+                            Heptagon.ShapeScore = Int32.Parse(stringArray[1]);
+                            break;
+                        case "OCTAGON" :
+                            Octagon.ShapeScore = Int32.Parse(stringArray[1]);
+                            break;
+                        default :
+                            throw new UserInputException();                         
+                    }  
+                }
+                catch { throw new UserInputException(); }
+            }
+            
         }
 
         public static List<IShape> GetShapes(string s)

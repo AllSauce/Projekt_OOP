@@ -37,7 +37,34 @@ namespace ThiccShapes
 
         public bool Inside(ComparisionPoint p)
         {
-            return true;
+            int counter = 0;
+            foreach(Line l in lines)
+            {
+                if (Algorithm.IntersectLine(l, p.ray))
+                {
+                    counter++;
+                }
+            }
+
+
+
+            if((p.Y != P1.Y) && (p.Y != P1.Y) && (p.Y != P1.Y))
+            {
+                if(counter == 1)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            else 
+            {
+                if(counter == 2)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            
         }
     }
 }

@@ -4,6 +4,6 @@ namespace ThiccShapes
 {
     public interface IShape
     {       
-        bool Inside(int x, int y);
+        bool Inside(Point p);
     }
 }

@@ -17,12 +17,12 @@ namespace ThiccShapes
         {
 
             
-            
+
         }
 
 
         
-        public bool Inside(int x, int y)
+        public bool Inside(Point p)
         {
             return true;
         }

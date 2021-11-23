@@ -8,6 +8,7 @@ namespace ThiccShapes
         static void Main(string[] args)
         {
             
+            
             Algorithm.GetTriangles(4, 4, 32, 4);
             
             
@@ -25,7 +26,7 @@ namespace ThiccShapes
             }
             List<IShape> shapes = Inputhandler.GetShapes("CIRCLE,   1,1,100;  TRIANGLE  , 2,3,123  ; ");
             Console.WriteLine(shapes.Count);
-            shapes[0].Inside(1, 4);
+            
         }
     }
 

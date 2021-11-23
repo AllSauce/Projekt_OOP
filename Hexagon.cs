@@ -10,6 +10,6 @@ namespace ThiccShapes
         {
             Console.WriteLine();
         }
-        public bool Inside(int x, int y){return true;}
+        public bool Inside(Point p){return true;}
     }   
 }

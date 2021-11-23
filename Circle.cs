@@ -15,11 +15,11 @@ namespace ThiccShapes
             Y = aY;
             Radius = Perimiter / (2 * Math.PI);
         }
-        public bool Inside(int x, int y)
+        public bool Inside(Point p)
         {
             Console.WriteLine(Radius);
-            int XLenght = Math.Abs(x - X);
-            int YLenght = Math.Abs(y - Y);
+            double XLenght = Math.Abs(p.X - X);
+            double YLenght = Math.Abs(p.Y - Y);
             double cLenght = Math.Sqrt((XLenght * XLenght) + (YLenght * YLenght));
             if (cLenght < Radius) return true;
             else return false;

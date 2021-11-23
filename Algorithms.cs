@@ -67,14 +67,11 @@ namespace ThiccShapes
             return deep;
         }
 
-        static double ToRadians(double deg) 
+        public static double ToRadians(double deg) 
         {
             return deg * (Math.PI/180);
         }
-        static double ToDeg(double radian)   
-        {
-            return (radian * Math.PI) / 180;
-        }  
+        
         //Funkar typ
         public static List<Triangle> GetTriangles(double x, double y, int Perimeter, int corners)
         {
@@ -107,8 +104,7 @@ namespace ThiccShapes
             double temppX = p.X;
             double temppY = p.Y;
 
-            temppX -= cx;
-            temppY -= cy;
+            
 
             //Nya roterade värden på x och y
             double xNew = temppX * c - temppY * s;

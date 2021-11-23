@@ -107,9 +107,12 @@ namespace ThiccShapes
             double temppX = p.X;
             double temppY = p.Y;
 
+            temppX -= cx;
+            temppY -= cy;
+
             //Nya roterade värden på x och y
-            double xNew = p.X * c - p.Y * s;
-            double yNew = p.X * s + p.Y * c;
+            double xNew = temppX * c - temppY * s;
+            double yNew = temppX * s + temppY * c;
 
             return new Point(xNew, yNew);
         }

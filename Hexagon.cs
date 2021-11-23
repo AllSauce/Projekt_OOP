@@ -12,7 +12,7 @@ namespace ThiccShapes
         {
             triangles = Algorithm.GetTriangles(x, y, Perimeter, 6);
         }
-        public bool Inside(Point p)
+        public bool Inside(ComparisionPoint p)
         {
             foreach(Triangle t in triangles)
             {

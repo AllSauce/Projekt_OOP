@@ -6,10 +6,10 @@ namespace ThiccShapes
     {
         public Point(double aX, double aY)
         {
-            X = aX;
-            Y = aY;
+           
             
         }
+        Line ray;
         public double X {get; private set;}
         public double Y {get; private set;}
         

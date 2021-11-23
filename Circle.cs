@@ -15,7 +15,7 @@ namespace ThiccShapes
             Y = aY;
             Radius = Perimiter / (2 * Math.PI);
         }
-        public bool Inside(Point p)
+        public bool Inside(ComparisionPoint p)
         {
             Console.WriteLine(Radius);
             double XLenght = Math.Abs(p.X - X);

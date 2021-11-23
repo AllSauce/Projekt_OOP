@@ -6,8 +6,8 @@ namespace ThiccShapes
     class Line
     {
         
-        Point P1;
-        Point P2;
+        public Point P1 {get; private set;}
+        public Point P2 {get; private set;}
         
         public Line(Point p1, Point p2)
         {

@@ -35,7 +35,7 @@ namespace ThiccShapes
 
         }
 
-        public bool Inside(Point p)
+        public bool Inside(ComparisionPoint p)
         {
             return true;
         }

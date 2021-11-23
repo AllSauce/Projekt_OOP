@@ -1,6 +1,6 @@
 TODOLIST
 
-Lägg till i inputhandler för att hantera ändringar av shapescore
+Lägg till i inputhandler för att hantera ändringar av shapescore // DONE
 
 Implemetera triangle.Inside
 

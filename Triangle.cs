@@ -45,9 +45,6 @@ namespace ThiccShapes
                     counter++;
                 }
             }
-
-
-
             if((p.Y != P1.Y) && (p.Y != P1.Y) && (p.Y != P1.Y))
             {
                 if(counter == 1)

@@ -10,7 +10,7 @@ namespace ThiccShapes
             PointScore = aPointScore;
             ray = new Line(this, new Point(Math.Pow(10, 100), aY));
         }
-        Line ray;
+        public Line ray;
         public int PointScore {get; private set;}
     }
 }

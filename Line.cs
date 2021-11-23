@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ThiccShapes
 {
-    class Line
+    public class Line
     {
         
         public Point P1 {get; private set;}

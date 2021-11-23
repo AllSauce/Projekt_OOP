@@ -121,6 +121,26 @@ namespace ThiccShapes
             return new Point(Math.Round(xNew, 5), Math.Round(yNew, 5));
         }
 
-        
+        public static bool IntersectLine(Line l1, Line l2)
+        {
+            //Instantiating X values
+            double x1 = l1.P1.X;
+            double x2 = l1.P2.X;
+            double x3 = l2.P1.X;
+            double x4 = l2.P2.X;
+
+            //Instantiating Y values
+            double y1 = l1.P1.Y;
+            double y2 = l1.P2.Y;
+            double y3 = l2.P1.Y;
+            double y4 = l2.P2.Y;
+
+            //Denominator
+            double D = (x1 - x2)*(y3 - y4) - (y1 - y2)*(x3 - x4);
+
+            //X and Y values of intersection point
+            double Px = ((x1 * y2 - y1*x2)*(x3 - x4) - (x1 - x2)*(x3*y4 - y3*x4));
+            double Py = ((x1*y2 - y1*x2)*(y3 - y4) - (y1 - y2)*(x3*y4 - y3*x4));
+        }
     }
 }

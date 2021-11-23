@@ -4,18 +4,18 @@ using System.Collections.Generic;
 
 namespace ThiccShapes
 {
-    class Algorithm
+    static class Algorithm
     {
 
         //How the fuck do we find the vertices.
-        public ArrayList Vertices()
+        public static ArrayList Vertices()
         {
             ArrayList coordinates = new ArrayList();
             return coordinates;
         }
 
         //Radius from centerpoint to a vertex of polygon
-        public double Radius(int sides, int midX, int midY, int perimeter)
+        public static double Radius(int sides, int midX, int midY, int perimeter)
         {
             double a = perimeter/sides;
 
@@ -26,7 +26,7 @@ namespace ThiccShapes
 
         //Algorithm called Herons formula 
         //to find height of triangle (in case we need it lol)
-        public double HeightOfTriangle(int p)
+        public static double HeightOfTriangle(int p)
         {
             double side = p/3;
 
@@ -44,7 +44,7 @@ namespace ThiccShapes
         //Could be put into circle class, this should work 
         //It checks if distance between point and mid is less than radius
         //If it is, then it is inside of circle
-        public bool IsInsideCircle(int midX, int midY, int pointX, int pointY, int perimeter)
+        public static bool IsInsideCircle(int midX, int midY, int pointX, int pointY, int perimeter)
         {
             bool deep = false;
 
@@ -67,24 +67,51 @@ namespace ThiccShapes
             return deep;
         }
 
-        double ToRadians(double deg) 
+        static double ToRadians(double deg) 
         {
             return deg * (Math.PI/180);
-        }       
-        public List<Triangle> GetTriangles(double x, double y, int Perimeter, int corners)
+        }
+        static double ToDeg(double radian)   
+        {
+            return (radian * Math.PI) / 180;
+        }  
+        //Funkar typ
+        public static List<Triangle> GetTriangles(double x, double y, int Perimeter, int corners)
         {
             double sideLength = Perimeter / corners;
             List<Point> points = new List<Point>();
-            int angleSumm = 180 * (corners - 2);            
+            int angleSumm = 180 * (corners - 2);   
+            double anglePerTurn = angleSumm  / corners;         
             double radianperTurn = ToRadians(angleSumm / corners);
-            double hypotenus = (sideLength / 2) / Math.Cos(54);
+            double hypotenus = (sideLength / 2) / Math.Cos(ToRadians(45))  ;
             double initalY = y - Math.Sqrt((hypotenus * hypotenus) - ((sideLength / 2) * (sideLength / 2)));
             double initalX = x - sideLength / 2;
             Point initalPoint = new Point(initalX, initalY);
             points.Add(initalPoint);
-            
+            for(int i = 0; i < corners - 1; i++)
+            {
+                points.Add(RotatePoint(x, y, anglePerTurn, points[i]));
+            }
+
             return null;
             
+        }
+        //Behlöver fixas
+        private static Point RotatePoint(double cx, double cy, double angle, Point p)
+        {
+            //Sinus och Cosinus av vinkeln
+            double s = Math.Sin(ToRadians(angle));
+            double c = Math.Cos(ToRadians(angle));
+
+            //Temporära variabler som kan förändras
+            double temppX = p.X;
+            double temppY = p.Y;
+
+            //Nya roterade värden på x och y
+            double xNew = p.X * c - p.Y * s;
+            double yNew = p.X * s + p.Y * c;
+
+            return new Point(xNew, yNew);
         }
 
         

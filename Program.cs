@@ -7,6 +7,16 @@ namespace ThiccShapes
     {
         static void Main(string[] args)
         {
+            
+            Algorithm.GetTriangles(4, 4, 32, 4);
+            
+            
+            
+            
+            
+            
+            
+            
             List<ComparisionPoint> points = Inputhandler.GetPoints("1,3,5; 4  , 13, 4;");
             //TESTING
             foreach (ComparisionPoint p in points)

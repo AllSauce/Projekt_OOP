@@ -93,6 +93,7 @@ namespace ThiccShapes
             return null;
             
         }
+        
         //Behlöver fixas
         private static Point RotatePoint(double cx, double cy, double angle, Point p)
         {
@@ -101,14 +102,15 @@ namespace ThiccShapes
             double c = Math.Cos(ToRadians(angle));
 
             //Temporära variabler som kan förändras
-            double temppX = p.X;
-            double temppY = p.Y;
-
-            
+            double temppX = p.X - cx;
+            double temppY = p.Y - cy;
 
             //Nya roterade värden på x och y
             double xNew = temppX * c - temppY * s;
             double yNew = temppX * s + temppY * c;
+
+            xNew += cx;
+            yNew += cy;
 
             return new Point(xNew, yNew);
         }

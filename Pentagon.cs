@@ -3,24 +3,18 @@ using System.Collections.Generic;
 
 namespace ThiccShapes
 {
-    public class Pentagon : IShape
+    public class Pentagon : Shape
     {
-        public List<Triangle> triangles;
+        
         public static int ShapeScore = 1;
         public Pentagon(int x, int y, int Perimeter)
         {
             triangles = Algorithm.GetTriangles(x, y, Perimeter, 5);
         }
-        public bool Inside(ComparisionPoint p)
+        
+        public override int GetShapeScore()
         {
-            foreach(Triangle t in triangles)
-            {
-                if (t.Inside(p))
-                {
-                    return true;
-                } 
-            }
-            return false;
+            return ShapeScore;
         }
     }
 }

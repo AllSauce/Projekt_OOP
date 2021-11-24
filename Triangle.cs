@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ThiccShapes
 {
-    public class Triangle : IShape
+    public class Triangle : Shape
     {
         Point P1;
         Point P2;
@@ -34,8 +34,12 @@ namespace ThiccShapes
             lines.Add(new Line(p3, p1));
 
         }
+        public override int GetShapeScore()
+        {
+            return ShapeScore;
+        }
 
-        public bool Inside(ComparisionPoint p)
+        public override bool Inside(ComparisionPoint p)
         {
             int counter = 0;
             foreach(Line l in lines)

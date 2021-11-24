@@ -6,12 +6,12 @@ namespace ThiccShapes
 {
     public static class Inputhandler
     {
-        public static Tuple<List<ComparisionPoint>, List<IShape>> HandleInput(string[] args)
+        public static Tuple<List<ComparisionPoint>, List<Shape>> HandleInput(string[] args)
         {
             List<ComparisionPoint> points = GetPoints(args[0]);
-            List<IShape> shapes = GetShapes(args[1]);
+            List<Shape> shapes = GetShapes(args[1]);
             ChangeShapreScores(args[2]);
-            Tuple<List<ComparisionPoint>, List<IShape>> tuple = new Tuple<List<ComparisionPoint>, List<IShape>>(points, shapes);
+            Tuple<List<ComparisionPoint>, List<Shape>> tuple = new Tuple<List<ComparisionPoint>, List<Shape>>(points, shapes);
             return tuple;
         }
         
@@ -87,13 +87,13 @@ namespace ThiccShapes
             
         }
 
-        public static List<IShape> GetShapes(string s)
+        public static List<Shape> GetShapes(string s)
         {
             s = s.Trim(' ');
             s = s.Remove(s.Length - 1);
             string[] args = s.Split(';');
             
-            List<IShape> Shapes = new List<IShape>();
+            List<Shape> Shapes = new List<Shape>();
             foreach(string strung in args)
             {                
                 string[] stringArray = strung.Split(',');                

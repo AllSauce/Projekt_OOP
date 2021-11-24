@@ -6,6 +6,16 @@ namespace ThiccShapes
 {
     static class Algorithm
     {
+        public static int PointsGet(Tuple<List<ComparisionPoint> , List<Shape>> t1)
+        {
+            int counter = 0;
+            foreach(Shape s in t1.Item2)
+            {
+                
+            }
+            return 0;
+        }
+
 
         //How the fuck do we find the vertices.
         public static ArrayList Vertices()

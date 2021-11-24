@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ThiccShapes
 {
-    public class Heptagon : IShape
+    public class Heptagon : Shape
     {
         public List<Triangle> triangles;
         public static int ShapeScore = 1;
@@ -11,7 +11,7 @@ namespace ThiccShapes
         {
             triangles = Algorithm.GetTriangles(x, y, Perimeter, 7);
         }
-        public bool Inside(ComparisionPoint p)
+        public override bool Inside(ComparisionPoint p)
         {
             foreach(Triangle t in triangles)
             {

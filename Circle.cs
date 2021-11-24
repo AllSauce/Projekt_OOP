@@ -2,7 +2,7 @@ using System;
 
 namespace ThiccShapes
 {
-    public class Circle : IShape
+    public class Circle : Shape
     {
         public static int ShapeScore = 1;
         public int X { get; private set;}
@@ -15,7 +15,7 @@ namespace ThiccShapes
             Y = aY;
             Radius = Perimiter / (2 * Math.PI);
         }
-        public bool Inside(ComparisionPoint p)
+        public override bool Inside(ComparisionPoint p)
         {
             Console.WriteLine(Radius);
             double XLenght = Math.Abs(p.X - X);
@@ -24,6 +24,10 @@ namespace ThiccShapes
             if (cLenght < Radius) return true;
             else return false;
             
+        }
+        public override int GetShapeScore()
+        {
+            return ShapeScore;
         }
     }
 

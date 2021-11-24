@@ -80,15 +80,10 @@ namespace ThiccShapes
             double y2 = P2.Y;
             double y3 = P3.Y;
 
-            //Trapezoids
-            double first = (1/2) * (y2 + y1) * (x1 - x2);
-            double second = (1/2) * (y1 + y3) * (x3 - x1);
-            double third = (1/2) * (y2 + y3) * (x3 - x2);
-
-            //Area
-            double Area = first + second - third;
-
-            return Math.Round(Area, 5);
+            
+            double a = (0.5) * Math.Abs(x1*(y2 - y3) + x2*(y3 - y1) + x3*(y1 - y2));
+            
+            return Math.Round(a, 5);
         }
     }
 }

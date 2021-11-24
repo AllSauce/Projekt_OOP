@@ -70,16 +70,18 @@ namespace ThiccShapes
 
         public override double getArea()
         {
-            //Edges
-            double one = Math.Sqrt(Math.Pow(P2.X - P1.X, 2) + Math.Pow(P2.Y - P1.Y, 2));
-            double two = Math.Sqrt(Math.Pow(P3.X - P2.X, 2) + Math.Pow(P3.Y - P2.Y, 2));
-            double three = Math.Sqrt(Math.Pow(P3.X - P1.X, 2) + Math.Pow(P3.Y - P1.Y, 2));
+            //X values
+            double x1 = P1.X;
+            double x2 = P2.X;
+            double x3 = P3.X;
 
-            //Semi-Perimeter
-            double s = (one + two + three)/2;
+            //Y values
+            double y1 = P1.Y;
+            double y2 = P2.Y;
+            double y3 = P3.Y;
 
             //Area
-            double a = Math.Sqrt(s*(s-one)*(s-two)*(s-three));
+            double a = (1/2) * Math.Abs(x1*(y2 - y3) + x2*(y3 - y1) + x3*(y1 - y2));
 
             return Math.Round(a, 5);
         }

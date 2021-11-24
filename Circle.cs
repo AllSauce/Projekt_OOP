@@ -15,7 +15,7 @@ namespace ThiccShapes
             Y = aY;
             Radius = Perimiter / (2 * Math.PI);
         }
-        public override bool Inside(ComparisionPoint p)
+        public override bool Inside(ComparisionPoint p, Algorithm a)
         {
             double XLenght = Math.Abs(p.X - X);
             double YLenght = Math.Abs(p.Y - Y);

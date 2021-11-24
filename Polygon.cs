@@ -2,10 +2,11 @@ namespace ThiccShapes
 {
     public class Polygon : Shape
     {
+        
         int corners;
-        public Polygon(Point p, int Perimeter, int aCorners)
+        public Polygon(Point p, int Perimeter, int aCorners, Algorithm a)
         {
-            triangles = Algorithm.GetTriangles(p.X, p.Y, Perimeter, aCorners);
+            triangles = a.GetTriangles(a.GetPoints(p, Perimeter, aCorners), p);
             corners = aCorners;
         }
         public override int GetShapeScore()

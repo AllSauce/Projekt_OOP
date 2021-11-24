@@ -7,7 +7,8 @@ namespace ThiccShapes
     {
         static void Main(string[] args)
         {   
-            Console.WriteLine(Algorithm.PointsGet(Inputhandler.HandleInput(args)));
+            ScoreGetter a = new ScoreGetter();
+            Console.WriteLine(a.GetScore(args));
         }
     }
 }

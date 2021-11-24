@@ -4,12 +4,13 @@ using System.IO;
 
 namespace ThiccShapes
 {
-    public static class Inputhandler
+    public class Inputhandler
     {
-        public static Tuple<List<ComparisionPoint>, List<Shape>> HandleInput(string[] args)
+        public Tuple<List<ComparisionPoint>, List<Shape>> HandleInput(string[] args, Algorithm a)
         {
+
             List<ComparisionPoint> points = GetPoints(args[0]);
-            List<Shape> shapes = GetShapes(args[1]);
+            List<Shape> shapes = GetShapes(args[1], a);
             ChangeShapreScores(args[2]);
             Tuple<List<ComparisionPoint>, List<Shape>> tuple = new Tuple<List<ComparisionPoint>, List<Shape>>(points, shapes);
             foreach (Shape s in shapes)
@@ -91,7 +92,7 @@ namespace ThiccShapes
             
         }
 
-        public static List<Shape> GetShapes(string s)
+        public static List<Shape> GetShapes(string s, Algorithm a)
         {
             string[] args = toStringArray(s);
             
@@ -111,22 +112,22 @@ namespace ThiccShapes
                             Shapes.Add(new Circle(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2]), Int32.Parse(stringArray[3])));
                             break;
                         case "TRIANGLE" :
-                            Shapes.Add(new Triangle(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2]), Int32.Parse(stringArray[3])));
+                            Shapes.Add(new Triangle(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2]), Int32.Parse(stringArray[3]), a));
                             break;
                         case "SQUARE" :
-                            Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 4));
+                            Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 4, a));
                             break;
                         case "PENTAGON" :
-                            Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 5));
+                            Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 5, a));
                             break;
                         case "HEXAGON" : 
-                            Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 6));
+                            Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 6, a));
                             break;
                         case "HEPTAGON" :
-                            Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 7));
+                            Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 7, a));
                             break;
                         case "OCTAGON" :
-                            Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 8));
+                            Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 8, a));
                             break;
                         default :
                             throw new UserInputException("No shape called " + stringArray[0]);                         

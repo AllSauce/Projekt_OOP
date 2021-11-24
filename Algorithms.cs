@@ -4,48 +4,33 @@ using System.Collections.Generic;
 
 namespace ThiccShapes
 {
-    static class Algorithm
-    {
-        public static double PointsGet(Tuple<List<ComparisionPoint> , List<Shape>> t1)
-        {
-            double counter = 0;
-            foreach(Shape s in t1.Item2)
-            {
-                foreach(ComparisionPoint p in t1.Item1)
-                {
-                    if (s.Inside(p))
-                    {
-                        counter = counter + (s.getArea() * s.GetShapeScore() * p.PointScore);
-                    }
-                    else counter = counter + ((s.getArea() * s.GetShapeScore()) / 4);
-                    
-                }
-            }
-            return counter;
-        }
-        public static double ToRadians(double deg) 
-        {
-            return deg * (Math.PI/180);
-        }
-        
-        //Funkar 
-        public static List<Triangle> GetTriangles(double x, double y, double Perimeter, double corners)
+    public class Algorithm
+    {    
+
+        public List<Point> GetPoints(Point centerpoint, double Perimeter, double corners)
         {
             double sideLength = Perimeter / corners;
             List<Point> points = new List<Point>();
             double angleSumm = 180 * (corners - 2);   
                     
             double radianperTurn = ToRadians(angleSumm / corners);
-            double hypotenus = (sideLength / 2) / Math.Cos(ToRadians(45))  ;
-            double initalY = y - Math.Round(Math.Sqrt((hypotenus * hypotenus) - ((sideLength / 2) * (sideLength / 2))), 5);
-            double initalX = x - sideLength / 2;
+            double hypotenus = (sideLength / 2) / Math.Cos(ToRadians(angleSumm / (corners * 2)));
+            double initalY = centerpoint.Y - Math.Round(Math.Sqrt((hypotenus * hypotenus) - ((sideLength / 2) * (sideLength / 2))), 5);
+            double initalX = centerpoint.X - sideLength / 2;
             Point initalPoint = new Point(initalX, initalY);
             points.Add(initalPoint);
-            Point centerPoint = new Point(x, y);
+            
             for(int i = 0; i < corners - 1; i++)
             {
-                points.Add(RotatePoint(x, y, radianperTurn, points[i]));
+                points.Add(RotatePoint(centerpoint, radianperTurn, points[i]));
             }
+            return points;
+
+        } 
+        //Funkar 
+        public List<Triangle> GetTriangles(List<Point> points, Point centerPoint)
+        {
+            
             List<Triangle> triangles = new List<Triangle>();
             for(int i = 1; i < points.Count; i++)
             {
@@ -55,29 +40,33 @@ namespace ThiccShapes
             return triangles;
             
         }
+        public double ToRadians(double deg) 
+        {
+            return deg * (Math.PI/180);
+        }
         
         //Så jävla vacker :))))))))
-        private static Point RotatePoint(double cx, double cy, double radian, Point p)
+        public Point RotatePoint(Point cr, double radian, Point pr)
         {
             //Sinus och Cosinus av vinkeln
             double s = Math.Sin(radian);
             double c = Math.Cos(radian);
 
             //Temporära variabler som kan förändras
-            double temppX = p.X - cx;
-            double temppY = p.Y - cy;
+            double temppX = pr.X - cr.X;
+            double temppY = pr.Y - cr.Y;
 
             //Nya roterade värden på x och y
             double xNew = temppX * c - temppY * s;
             double yNew = temppX * s + temppY * c;
 
-            xNew += cx;
-            yNew += cy;
+            xNew += cr.X;
+            yNew += cr.Y;
 
             return new Point(Math.Round(xNew, 5), Math.Round(yNew, 5));
         }
 
-        public static bool IntersectLine(Line l1, Line l2)
+        public bool IntersectLine(Line l1, Line l2)
         {
             //Instantiating X values
             double x1 = l1.P1.X;

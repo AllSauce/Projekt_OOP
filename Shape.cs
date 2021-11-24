@@ -12,11 +12,11 @@ namespace ThiccShapes
         {
             SC[index] = sc;
         }
-        public virtual bool Inside(ComparisionPoint p)
+        public virtual bool Inside(ComparisionPoint p, Algorithm a)
         {
             foreach(Triangle t in triangles)
             {
-                if (t.Inside(p))
+                if (t.Inside(p, a))
                 {
                     return true;
                 } 

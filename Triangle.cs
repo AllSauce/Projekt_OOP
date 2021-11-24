@@ -81,7 +81,7 @@ namespace ThiccShapes
             //Area
             double a = Math.Sqrt(s*(s-one)*(s-two)*(s-three));
 
-            return a;
+            return Math.Round(a, 5);
         }
     }
 }

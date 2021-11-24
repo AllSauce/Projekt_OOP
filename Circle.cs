@@ -17,7 +17,6 @@ namespace ThiccShapes
         }
         public override bool Inside(ComparisionPoint p)
         {
-            Console.WriteLine(Radius);
             double XLenght = Math.Abs(p.X - X);
             double YLenght = Math.Abs(p.Y - Y);
             double cLenght = Math.Sqrt((XLenght * XLenght) + (YLenght * YLenght));

@@ -4,6 +4,6 @@ Lägg till i inputhandler för att hantera ändringar av shapescore // DONE
 
 Implemetera triangle.Inside // DONE
 
-Kommentera kod
+Kommentera kod // FUCK OFF
 
-Implemetera Funktion för att räkna ut total poäng
+Implemetera Funktion för att räkna ut total poäng // DONE

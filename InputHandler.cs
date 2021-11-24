@@ -8,6 +8,7 @@ namespace ThiccShapes
     {
         public static Tuple<List<ComparisionPoint>, List<Shape>> HandleInput(string[] args)
         {
+            
             List<ComparisionPoint> points = GetPoints(args[0]);
             List<Shape> shapes = GetShapes(args[1]);
             ChangeShapreScores(args[2]);

@@ -12,6 +12,13 @@ namespace ThiccShapes
             List<Shape> shapes = GetShapes(args[1]);
             ChangeShapreScores(args[2]);
             Tuple<List<ComparisionPoint>, List<Shape>> tuple = new Tuple<List<ComparisionPoint>, List<Shape>>(points, shapes);
+            foreach (Shape s in shapes)
+            {
+                if (s.GetShapeScore() == 0)
+                {   
+                    throw new UserInputException("One or more shapes lacks associtaed ShapeScore");
+                }
+            }
             return tuple;
         }
         
@@ -33,7 +40,7 @@ namespace ThiccShapes
                 }
                 catch
                 {
-                    throw new UserInputException();
+                    throw new UserInputException("Your input for the points is incorrect. It should follow this format: X, Y, SCORE. Each point should also be separated with a ‘;’");
                 }                              
             }           
             return points;

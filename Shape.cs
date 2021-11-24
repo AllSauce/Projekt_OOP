@@ -7,7 +7,7 @@ namespace ThiccShapes
     {   
         
         public List<Triangle> triangles;
-        protected static int[] SC = {1, 1, 1, 1, 1, 1, 1};
+        protected static int[] SC = new int[6];
         public static void setSC(int sc, int index)
         {
             SC[index] = sc;

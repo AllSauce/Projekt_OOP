@@ -18,6 +18,7 @@ namespace ThiccShapes
                         counter = counter + (s.getArea() * s.GetShapeScore() * p.PointScore);
                     }
                     else counter = counter + ((s.getArea() * s.GetShapeScore()) / 4);
+                    
                 }
             }
             return counter;

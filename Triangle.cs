@@ -10,7 +10,7 @@ namespace ThiccShapes
         Point P3;
 
         
-        public static int ShapeScore = 1;
+        
         List<Line> lines = new List<Line>();
 
         static void makeFunctions()
@@ -36,7 +36,7 @@ namespace ThiccShapes
         }
         public override int GetShapeScore()
         {
-            return ShapeScore;
+            return SC[1];
         }
 
         public override bool Inside(ComparisionPoint p)

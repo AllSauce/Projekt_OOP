@@ -4,7 +4,7 @@ namespace ThiccShapes
 {
     public class Circle : Shape
     {
-        public static int ShapeScore = 1;
+        
         public int X { get; private set;}
         public int Y { get; private set;}
         public double Radius { get; private set;}
@@ -26,7 +26,7 @@ namespace ThiccShapes
         }
         public override int GetShapeScore()
         {
-            return ShapeScore;
+            return SC[0];
         }
         public override double getArea()
         {

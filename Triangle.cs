@@ -69,21 +69,10 @@ namespace ThiccShapes
         }
 
         public override double getArea()
-        {
-            //X values
-            double x1 = P1.X;
-            double x2 = P2.X;
-            double x3 = P3.X;
-
-            //Y values
-            double y1 = P1.Y;
-            double y2 = P2.Y;
-            double y3 = P3.Y;
-
+        {       
+                
+            return Math.Round(((0.5) * Math.Abs(P1.X*(P2.Y - P3.Y) + P2.X*(P3.Y - P1.Y) + P3.X*(P1.Y - P2.Y))), 5);
             
-            double a = (0.5) * Math.Abs(x1*(y2 - y3) + x2*(y3 - y1) + x3*(y1 - y2));
-            
-            return Math.Round(a, 5);
         }
     }
 }

@@ -7,17 +7,8 @@ namespace ThiccShapes
     {
         Point P1;
         Point P2;
-        Point P3;
-
-        
-        
-        List<Line> lines = new List<Line>();
-
-        static void makeFunctions()
-        {
-
-        }
-        //Contancted to make standalone triangles from x, y and perimiter
+        Point P3;      
+        List<Line> lines = new List<Line>();       
         public Triangle(int x, int y, int Perimeter)
         {
 
@@ -38,7 +29,6 @@ namespace ThiccShapes
         {
             return SC[1];
         }
-
         public override bool Inside(ComparisionPoint p)
         {
             int counter = 0;
@@ -67,7 +57,6 @@ namespace ThiccShapes
             }
             
         }
-
         public override double getArea()
         {       
                 

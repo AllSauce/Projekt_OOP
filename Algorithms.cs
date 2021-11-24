@@ -22,7 +22,7 @@ namespace ThiccShapes
             
             for(int i = 0; i < corners - 1; i++)
             {
-                points.Add(RotatePoint(centerpoint, radianperTurn, points[i]));
+                points.Add(RotatePoint(new Line(centerpoint, points[i]), radianperTurn));
             }
             return points;
 
@@ -46,22 +46,22 @@ namespace ThiccShapes
         }
         
         //Så jävla vacker :))))))))
-        public Point RotatePoint(Point cr, double radian, Point pr)
+        public Point RotatePoint(Line l, double radian)
         {
             //Sinus och Cosinus av vinkeln
             double s = Math.Sin(radian);
             double c = Math.Cos(radian);
 
             //Temporära variabler som kan förändras
-            double temppX = pr.X - cr.X;
-            double temppY = pr.Y - cr.Y;
+            double temppX = l.P2.X - l.P1.X;
+            double temppY = l.P2.Y - l.P1.Y;
 
             //Nya roterade värden på x och y
             double xNew = temppX * c - temppY * s;
             double yNew = temppX * s + temppY * c;
 
-            xNew += cr.X;
-            yNew += cr.Y;
+            xNew += l.P1.X;
+            yNew += l.P1.Y;
 
             return new Point(Math.Round(xNew, 5), Math.Round(yNew, 5));
         }

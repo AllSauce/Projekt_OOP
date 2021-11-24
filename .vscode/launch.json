@@ -27,7 +27,7 @@
             "WARNING17": "*********************************************************************************",
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/bin/Debug/net5.0/ThiccShapes.dll",
-            "args": [],
+            "args": ["1, 1,5 ;", "SQUARE , 5,3 ,10 ;", " SQUARE, 5;"],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopAtEntry": false

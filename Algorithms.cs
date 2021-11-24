@@ -28,11 +28,11 @@ namespace ThiccShapes
         }
         
         //Funkar 
-        public static List<Triangle> GetTriangles(double x, double y, int Perimeter, int corners)
+        public static List<Triangle> GetTriangles(double x, double y, double Perimeter, double corners)
         {
             double sideLength = Perimeter / corners;
             List<Point> points = new List<Point>();
-            int angleSumm = 180 * (corners - 2);   
+            double angleSumm = 180 * (corners - 2);   
                     
             double radianperTurn = ToRadians(angleSumm / corners);
             double hypotenus = (sideLength / 2) / Math.Cos(ToRadians(45))  ;

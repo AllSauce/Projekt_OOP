@@ -6,77 +6,22 @@ namespace ThiccShapes
 {
     static class Algorithm
     {
-        public static int PointsGet(Tuple<List<ComparisionPoint> , List<Shape>> t1)
+        public static double PointsGet(Tuple<List<ComparisionPoint> , List<Shape>> t1)
         {
-            int counter = 0;
+            double counter = 0;
             foreach(Shape s in t1.Item2)
             {
-                
+                foreach(ComparisionPoint p in t1.Item1)
+                {
+                    if (s.Inside(p))
+                    {
+                        counter = counter + (s.getArea() * s.GetShapeScore() * p.PointScore);
+                    }
+                    else counter = counter + ((s.getArea() * s.GetShapeScore()) / 4);
+                }
             }
-            return 0;
+            return counter;
         }
-
-
-        //How the fuck do we find the vertices.
-        public static ArrayList Vertices()
-        {
-            ArrayList coordinates = new ArrayList();
-            return coordinates;
-        }
-
-        //Radius from centerpoint to a vertex of polygon
-        public static double Radius(int sides, int midX, int midY, int perimeter)
-        {
-            double a = perimeter/sides;
-
-            double r = (a/(2*Math.Sin(180/sides)));
-
-            return r;
-        }
-
-        //Algorithm called Herons formula 
-        //to find height of triangle (in case we need it lol)
-        public static double HeightOfTriangle(int p)
-        {
-            double side = p/3;
-
-            double s = p/2;
-
-            //Area
-            double A = Math.Sqrt(s*(s-side)*(s-side)*(s-side));
-
-            //Height
-            double h = (2*A)/side;
-
-            return h;
-        }
-
-        //Could be put into circle class, this should work 
-        //It checks if distance between point and mid is less than radius
-        //If it is, then it is inside of circle
-        public static bool IsInsideCircle(int midX, int midY, int pointX, int pointY, int perimeter)
-        {
-            bool deep = false;
-
-            var R = perimeter/(2*Math.PI);
-            var dLat = ToRadians(pointX-midX);
-            var dLon = ToRadians(pointY-midY); 
-            var a = 
-                Math.Sin(dLat/2) * Math.Sin(dLat/2) +
-                Math.Cos(ToRadians(midX)) * Math.Cos(ToRadians(pointX)) * 
-                Math.Sin(dLon/2) * Math.Sin(dLon/2);
-
-            var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1-a)); 
-            var d = R * c;
-
-            if(d < R)
-            {
-                deep = true;
-            }
-
-            return deep;
-        }
-
         public static double ToRadians(double deg) 
         {
             return deg * (Math.PI/180);

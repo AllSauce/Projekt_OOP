@@ -27,7 +27,7 @@ namespace ThiccShapes
             return deg * (Math.PI/180);
         }
         
-        //Funkar typ
+        //Funkar 
         public static List<Triangle> GetTriangles(double x, double y, int Perimeter, int corners)
         {
             double sideLength = Perimeter / corners;

@@ -18,6 +18,14 @@ namespace ThiccShapes
             return false;
         }
         public abstract int GetShapeScore();
-        public abstract double getArea();
+        public virtual double getArea()
+        {
+            double d = 0;
+            foreach (Triangle t in triangles)
+            {
+                d = d + t.getArea();
+            }
+            return d;
+        }
     }
 }

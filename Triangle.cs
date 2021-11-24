@@ -67,5 +67,21 @@ namespace ThiccShapes
             }
             
         }
+
+        public override double getArea()
+        {
+            //Edges
+            double one = Math.Sqrt(Math.Pow(P2.X - P1.X, 2) + Math.Pow(P2.Y - P1.Y, 2));
+            double two = Math.Sqrt(Math.Pow(P3.X - P2.X, 2) + Math.Pow(P3.Y - P2.Y, 2));
+            double three = Math.Sqrt(Math.Pow(P3.X - P1.X, 2) + Math.Pow(P3.Y - P1.Y, 2));
+
+            //Semi-Perimeter
+            double s = (one + two + three)/2;
+
+            //Area
+            double a = Math.Sqrt(s*(s-one)*(s-two)*(s-three));
+
+            return a;
+        }
     }
 }

@@ -5,20 +5,19 @@ namespace ThiccShapes
     public class Circle : Shape
     {
         
-        public int X { get; private set;}
-        public int Y { get; private set;}
+        Point centerPoint;
+
         public double Radius { get; private set;}
 
-        public Circle(int aX, int aY, int Perimiter)
+        public Circle(Point p, int Perimiter)
         {
-            X = aX;
-            Y = aY;
+            centerPoint = p;
             Radius = Perimiter / (2 * Math.PI);
         }
         public override bool Inside(ComparisionPoint p, Algorithm a)
         {
-            double XLenght = Math.Abs(p.X - X);
-            double YLenght = Math.Abs(p.Y - Y);
+            double XLenght = Math.Abs(p.X - centerPoint.X);
+            double YLenght = Math.Abs(p.Y - centerPoint.Y);
             double cLenght = Math.Sqrt((XLenght * XLenght) + (YLenght * YLenght));
             if (cLenght < Radius) return true;
             else return false;

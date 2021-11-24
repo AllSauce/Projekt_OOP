@@ -9,3 +9,5 @@ Kommentera kod // FUCK OFF
 Skicka in Linje ist för 2 punkter i Alrogithm.Rotate // DONE
 
 Implemetera Funktion för att räkna ut total poäng // DONE
+
+Implemetera triangle construktor

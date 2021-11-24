@@ -23,7 +23,7 @@ namespace ThiccShapes
             return tuple;
         }
         
-        public static List<ComparisionPoint> GetPoints(string s)
+        public List<ComparisionPoint> GetPoints(string s)
         {
             string[] args = toStringArray(s);
             List<ComparisionPoint> points = new List<ComparisionPoint>();
@@ -46,7 +46,7 @@ namespace ThiccShapes
             }           
             return points;
         }
-        static void ChangeShapreScores(string s)
+        void ChangeShapreScores(string s)
         {
             string[] args = toStringArray(s);
             
@@ -92,7 +92,7 @@ namespace ThiccShapes
             
         }
 
-        public static List<Shape> GetShapes(string s, Algorithm a)
+        public List<Shape> GetShapes(string s, Algorithm a)
         {
             string[] args = toStringArray(s);
             
@@ -109,10 +109,10 @@ namespace ThiccShapes
                     switch (stringArray[0])
                     {
                         case "CIRCLE":
-                            Shapes.Add(new Circle(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2]), Int32.Parse(stringArray[3])));
+                            Shapes.Add(new Circle(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3])));
                             break;
                         case "TRIANGLE" :
-                            Shapes.Add(new Triangle(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2]), Int32.Parse(stringArray[3]), a));
+                            Shapes.Add(new Triangle(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), a));
                             break;
                         case "SQUARE" :
                             Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 4, a));
@@ -133,11 +133,11 @@ namespace ThiccShapes
                             throw new UserInputException("No shape called " + stringArray[0]);                         
                     }  
                 }
-                catch { throw new UserInputException(stringArray[1] + " or " + stringArray[2] + " or " + stringArray[3] + " Is not an integer"); }            
+                catch { throw new UserInputException(stringArray[1] + " or " + stringArray[2] + " or " + stringArray[3] + " Is not an integer"); }             
             }
             return Shapes;
         }
-        static string[] toStringArray(string s)
+        string[] toStringArray(string s)
         {
             s = s.Trim(' ');
             s = s.Remove(s.Length - 1);

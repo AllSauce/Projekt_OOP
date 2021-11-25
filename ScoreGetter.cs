@@ -1,3 +1,5 @@
+using System;
+
 namespace ThiccShapes
 {
     class ScoreGetter
@@ -20,7 +22,8 @@ namespace ThiccShapes
                     
                 }
             }
-            return counter;
+            return Math.Round(counter, MidpointRounding.AwayFromZero);
+;
         }   
     }
     

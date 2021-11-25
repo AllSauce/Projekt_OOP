@@ -29,7 +29,7 @@ namespace ThiccShapes
         }
         public override double getArea()
         {
-            return (Radius * 2) * Math.PI;
+            return (Radius * Radius) * Math.PI;
         }
     }
 

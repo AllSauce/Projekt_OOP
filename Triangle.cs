@@ -46,20 +46,14 @@ namespace ThiccShapes
                     counter++;
                 }
             }
-            if(p.Y != P1.Y && p.Y != P1.Y && p.Y != P1.Y)
+            if(p.Y != P1.Y && p.Y != P2.Y && p.Y != P3.Y)
             {
-                if(counter == 1)
-                {
-                    return true;
-                }
+                if(counter == 1)  return true;
                 else return false;
             }
             else 
             {
-                if(counter == 2)
-                {
-                    return true;
-                }
+                if(counter == 2) return true;
                 else return false;
             }
             

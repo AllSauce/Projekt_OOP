@@ -115,9 +115,7 @@ namespace ThiccShapes
                             Shapes.Add(new Circle(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3])));
                             break;
                         case "TRIANGLE" :
-                            Point p = new Point (double.Parse(stringArray[1]), double.Parse(stringArray[2]));
-                            int Perimiter = Int32.Parse(stringArray[3]);
-                            Shapes.Add(new Triangle(p, Perimiter, a));
+                            Shapes.Add(new Triangle(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), a));
                             break;
                         case "SQUARE" :
                             Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 4, a));

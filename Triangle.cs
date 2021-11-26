@@ -12,7 +12,7 @@ namespace ThiccShapes
         List<Line> lines = new List<Line>();    
         public Triangle(Point p, int Perimeter, Algorithm a)
         {
-            List<Point> points = a.GetPoints(p, Perimeter, 2);
+            List<Point> points = a.GetPoints(p, Perimeter, 3);
             P1 = points[0];   
             P2 = points[1];  
             P3 = points[2];

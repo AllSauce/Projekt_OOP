@@ -31,9 +31,9 @@ namespace ThiccShapes
             lines.Add(new Line(p2, p3));
             lines.Add(new Line(p3, p1));
         }
-        public override int GetShapeScore()
+        public override int GetShapeScore(ShapeScore sc)
         {
-            return SC[1];
+            return sc.GetShapeScore(1);
         }
         public override bool Inside(ComparisionPoint p, Algorithm a)
         {

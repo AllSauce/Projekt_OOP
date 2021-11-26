@@ -7,11 +7,8 @@ namespace ThiccShapes
     {   
         
         public List<Triangle> triangles;
-        protected static int[] SC = new int[6];
-        public static void setSC(int sc, int index)
-        {
-            SC[index] = sc;
-        }
+        
+        
         public virtual bool Inside(ComparisionPoint p, Algorithm a)
         {
             foreach(Triangle t in triangles)
@@ -23,7 +20,7 @@ namespace ThiccShapes
             }
             return false;
         }
-        public abstract int GetShapeScore();
+        public abstract int GetShapeScore(ShapeScore sc);
        
         public virtual double getArea()
         {

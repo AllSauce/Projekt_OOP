@@ -9,9 +9,9 @@ namespace ThiccShapes
             triangles = a.GetTriangles(a.GetPoints(p, Perimeter, aCorners), p);
             corners = aCorners;
         }
-        public override int GetShapeScore()
+        public override int GetShapeScore(ShapeScore sc)
         {
-            return SC[corners - 2];
+            return sc.GetShapeScore(corners - 2);
         }
     }
 }

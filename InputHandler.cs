@@ -6,16 +6,16 @@ namespace ThiccShapes
 {
     public class Inputhandler
     {
-        public Tuple<List<ComparisionPoint>, List<Shape>> HandleInput(string[] args, Algorithm a)
+        public Tuple<List<ComparisionPoint>, List<Shape>> HandleInput(string[] args, Algorithm a, ShapeScore sc)
         {
 
             List<ComparisionPoint> points = GetPoints(args[0]);
             List<Shape> shapes = GetShapes(args[1], a);
-            ChangeShapreScores(args[2]);
+            ChangeShapreScores(args[2], sc);
             Tuple<List<ComparisionPoint>, List<Shape>> tuple = new Tuple<List<ComparisionPoint>, List<Shape>>(points, shapes);
             foreach (Shape s in shapes)
             {
-                if (s.GetShapeScore() == 0)
+                if (s.GetShapeScore(sc) == 0)
                 {   
                     throw new UserInputException("One or more shapes lacks associtaed ShapeScore");
                 }
@@ -46,7 +46,7 @@ namespace ThiccShapes
             }           
             return points;
         }
-        void ChangeShapreScores(string s)
+        void ChangeShapreScores(string s, ShapeScore sc)
         {
             string[] args = toStringArray(s);
             
@@ -63,31 +63,34 @@ namespace ThiccShapes
                     switch (stringArray[0])
                     {
                         case "CIRCLE":
-                            Shape.setSC(Int32.Parse(stringArray[1]), 0);
+                            sc.setSC(Int32.Parse(stringArray[1]), 0);
                             break;
                         case "TRIANGLE" :
-                            Shape.setSC(Int32.Parse(stringArray[1]), 1);
+                            sc.setSC(Int32.Parse(stringArray[1]), 1);
                             break;
                         case "SQUARE" :
-                            Shape.setSC(Int32.Parse(stringArray[1]), 2);
+                            sc.setSC(Int32.Parse(stringArray[1]), 2);
                             break;
                         case "PENTAGON" :
-                            Shape.setSC(Int32.Parse(stringArray[1]), 3);
+                            sc.setSC(Int32.Parse(stringArray[1]), 3);
                             break;
                         case "HEXAGON" : 
-                            Shape.setSC(Int32.Parse(stringArray[1]), 4);
+                            sc.setSC(Int32.Parse(stringArray[1]), 4);
                             break;
                         case "HEPTAGON" :
-                            Shape.setSC(Int32.Parse(stringArray[1]), 5);
+                            sc.setSC(Int32.Parse(stringArray[1]), 5);
                             break;
                         case "OCTAGON" :
-                            Shape.setSC(Int32.Parse(stringArray[1]), 6);
+                            sc.setSC(Int32.Parse(stringArray[1]), 6);
                             break;
                         default :
                             throw new UserInputException("No shape called " + stringArray[0]);                         
                     }  
                 }
-                catch { throw new UserInputException(stringArray[1] + " Is not an integer"); }
+                catch (Exception e)
+                { 
+                    throw new UserInputException(e + stringArray[1] + " Is not an integer"); 
+                }
             }
             
         }
@@ -133,7 +136,11 @@ namespace ThiccShapes
                             throw new UserInputException("No shape called " + stringArray[0]);                         
                     }  
                 }
-                catch { throw new UserInputException(stringArray[1] + " or " + stringArray[2] + " or " + stringArray[3] + " Is not an integer"); }             
+                catch (Exception e)
+                { 
+                    Console.WriteLine(e);
+                    throw new UserInputException(stringArray[1] + " or " + stringArray[2] + " or " + stringArray[3] + " Is not an integer"); 
+                }             
             }
             return Shapes;
         }

@@ -23,9 +23,9 @@ namespace ThiccShapes
             else return false;
             
         }
-        public override int GetShapeScore()
+        public override int GetShapeScore(ShapeScore sc)
         {
-            return SC[0];
+            return sc.GetShapeScore(0);
         }
         public override double getArea()
         {

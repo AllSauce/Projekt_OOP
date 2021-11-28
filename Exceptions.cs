@@ -1,15 +1,14 @@
 using System;
 
 namespace ThiccShapes
-{
-    
-    
+{   
     public class UserInputException : System.Exception
     {
         public UserInputException() 
         { 
             
         }
+        //Exception for userinput error
         public UserInputException(string message) : base(message) 
         {
             Console.WriteLine(message);

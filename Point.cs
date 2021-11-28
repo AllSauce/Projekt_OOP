@@ -2,6 +2,7 @@ using System;
 
 namespace ThiccShapes
 {
+    //Datatype to more easily represent points
     public class Point
     {
         public Point(double aX, double aY)

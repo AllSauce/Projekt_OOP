@@ -8,11 +8,16 @@ namespace ThiccShapes
     {
         public Tuple<List<ComparisionPoint>, List<Shape>> HandleInput(string[] args, Algorithm a, ShapeScore sc)
         {
-
+            //Gets points into list with use of first string in args
             List<ComparisionPoint> points = GetPoints(args[0]);
+
+            //Gets shapes into a list with use of second string in args
             List<Shape> shapes = GetShapes(args[1], a);
+
+            //Updates shapescores depending on what is said within third string in args
             ChangeShapreScores(args[2], sc);
-            Tuple<List<ComparisionPoint>, List<Shape>> tuple = new Tuple<List<ComparisionPoint>, List<Shape>>(points, shapes);
+
+            //Checks that all used shapes have a shapescore
             foreach (Shape s in shapes)
             {
                 if (s.GetShapeScore(sc) == 0)
@@ -20,25 +25,34 @@ namespace ThiccShapes
                     throw new UserInputException("One or more shapes lacks associtaed ShapeScore");
                 }
             }
-            return tuple;
+            // Prepares to return
+            return new Tuple<List<ComparisionPoint>, List<Shape>>(points, shapes);
         }
-        
+        //Gets point from input string
         public List<ComparisionPoint> GetPoints(string s)
         {
+            // Splits string between ; and trims away ' '
             string[] args = toStringArray(s);
+
+            //returnlist
             List<ComparisionPoint> points = new List<ComparisionPoint>();
+
             foreach(string strung in args)
-            {               
+            {     
+                //Splits string into every argument needed         
                 string[] stringArray = strung.Split(',');
                 
+                //Removes all spaces for parsing
                 for(int i = 0; i < stringArray.Length; i++)
                 {
                     stringArray[i] = stringArray[i].Trim(' ');
                 }                               
                 try
                 {
+                    //Adds a new point
                     points.Add(new ComparisionPoint(Int32.Parse(stringArray[0]), Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])));                    
                 }
+                //Cathces if parsing fails
                 catch
                 {
                     throw new UserInputException("Your input for the points is incorrect. It should follow this format: X, Y, SCORE. Each point should also be separated with a ‘;’");
@@ -48,12 +62,16 @@ namespace ThiccShapes
         }
         void ChangeShapreScores(string s, ShapeScore sc)
         {
+            // Splits string between ; and trims away ' '
             string[] args = toStringArray(s);
             
 
             foreach(string arg in args)
             {
-                string[] stringArray = arg.Split(',');                
+                //Splits between different arguments
+                string[] stringArray = arg.Split(',');  
+
+                //Trims for parsing              
                 for(int i = 0; i < stringArray.Length; i++)
                 {
                     stringArray[i] = stringArray[i].Trim(' ');
@@ -84,25 +102,33 @@ namespace ThiccShapes
                             sc.setSC(Int32.Parse(stringArray[1]), 6);
                             break;
                         default :
+                            // If it doesn't  match any implemented shape
                             throw new UserInputException("No shape called " + stringArray[0]);                         
                     }  
                 }
-                catch (Exception e)
+                //Cathces if parsing fails
+                catch 
                 { 
-                    throw new UserInputException(e + stringArray[1] + " Is not an integer"); 
+                    throw new UserInputException(stringArray[1] + " Is not an integer"); 
                 }
             }
             
         }
-
+        //Gets shapoes from input string
         public List<Shape> GetShapes(string s, Algorithm a)
         {
+            //Splits string into the different shapes
             string[] args = toStringArray(s);
-            
+
+            //Return List
             List<Shape> Shapes = new List<Shape>();
+
             foreach(string strung in args)
-            {                
-                string[] stringArray = strung.Split(',');                
+            {       
+                //Splits between different arguments         
+                string[] stringArray = strung.Split(','); 
+
+                //Trims for parsing               
                 for(int i = 0; i < stringArray.Length; i++)
                 {
                     stringArray[i] = stringArray[i].Trim(' ');
@@ -133,20 +159,24 @@ namespace ThiccShapes
                             Shapes.Add(new Polygon(new Point(Int32.Parse(stringArray[1]), Int32.Parse(stringArray[2])), Int32.Parse(stringArray[3]), 8, a));
                             break;
                         default :
+                            // Catches if input doesn't match any implemented shape
                             throw new UserInputException("No shape called " + stringArray[0]);                         
                     }  
                 }
-                catch (Exception e)
+                //Cathes if parsing fails
+                catch
                 { 
-                    Console.WriteLine(e);
+                    
                     throw new UserInputException(stringArray[1] + " or " + stringArray[2] + " or " + stringArray[3] + " Is not an integer"); 
                 }             
             }
             return Shapes;
         }
+        //Helper method to splits between ;
         string[] toStringArray(string s)
         {
             s = s.Trim(' ');
+            //Removes last ; if one exists
             if(s[s.Length - 1] == ';') s = s.Remove(s.Length - 1);
             return s.Split(';');
         }

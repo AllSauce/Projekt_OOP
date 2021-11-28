@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ThiccShapes
 {
+    //Datatype to more easily represent lines
     public class Line
     {
         

@@ -15,7 +15,7 @@ namespace ThiccShapes
             double radianperTurn = ToRadians(angleSumm / corners);
             if(corners % 2 != 0)
             {
-                radianperTurn = radianperTurn * 2;
+                radianperTurn = ToRadians(angleSumm / corners*2);
             }        
             
             double hypotenus = (sideLength / 2) / Math.Cos(ToRadians(angleSumm / (corners * 2)));
@@ -87,14 +87,13 @@ namespace ThiccShapes
             //Denominator
             double D = (x1 - x2)*(y3 - y4) - (y1 - y2)*(x3 - x4);
 
-            //Är den parallel med linje blir den noll vilket betyder att om den är på/parallell med linje från inuti shapen så blir det 0 vilket är fel.
-            
-            if(D == 0)
-            {return false;}
+            //Fel vid triangel då den kommer vara parallel mot en linje alltid
+
+            if(D == 0) return false;
 
             //X and Y values of intersection point
             double t = ((x1 - x3)*(y3 - y4) - (y1 - y3)*(x3 - x4))/D;
-            double u = ((x1 - x3)*(y1 - y2) - (y1 - y3)*(x3 - x4))/D;
+            double u = ((x1 - x3)*(y1 - y2) - (y1 - y3)*(x1 - x2))/D;
 
             if(t >= 0 && t <= 1 && u >= 0 && u <= 1)
             {

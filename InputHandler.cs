@@ -147,7 +147,7 @@ namespace ThiccShapes
         string[] toStringArray(string s)
         {
             s = s.Trim(' ');
-            s = s.Remove(s.Length - 1);
+            if(s[s.Length - 1] == ';') s = s.Remove(s.Length - 1);
             return s.Split(';');
         }
         

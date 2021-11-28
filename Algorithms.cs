@@ -11,9 +11,13 @@ namespace ThiccShapes
         {
             double sideLength = Perimeter / corners;
             List<Point> points = new List<Point>();
-            double angleSumm = 180 * (corners - 2);   
-                    
+            double angleSumm = 180 * (corners - 2);
             double radianperTurn = ToRadians(angleSumm / corners);
+            if(corners % 2 != 0)
+            {
+                radianperTurn = radianperTurn * 2;
+            }        
+            
             double hypotenus = (sideLength / 2) / Math.Cos(ToRadians(angleSumm / (corners * 2)));
             double initalY = centerpoint.Y - Math.Round(Math.Sqrt((hypotenus * hypotenus) - ((sideLength / 2) * (sideLength / 2))), 5);
             double initalX = centerpoint.X - sideLength / 2;

@@ -8,6 +8,7 @@ namespace ThiccShapes
         {
             triangles = a.GetTriangles(a.GetPoints(p, Perimeter, aCorners), p);
             corners = aCorners;
+            centerPoint = p;
         }
         public override int GetShapeScore(ShapeScore sc)
         {

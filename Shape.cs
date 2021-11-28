@@ -8,9 +8,13 @@ namespace ThiccShapes
         
         public List<Triangle> triangles;
         
+        protected Point centerPoint;
         
         public virtual bool Inside(ComparisionPoint p, Algorithm a)
         {
+            // returns true if point == centerpoint since triangles can't detect it
+            if (p.X == centerPoint.X && p.Y == centerPoint.Y ) return true;
+
             foreach(Triangle t in triangles)
             {
                 if (t.Inside(p, a))

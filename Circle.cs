@@ -5,7 +5,7 @@ namespace ThiccShapes
     public class Circle : Shape
     {
         
-        Point centerPoint;
+        
 
         public double Radius { get; private set;}
 

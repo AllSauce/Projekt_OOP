@@ -87,6 +87,8 @@ namespace ThiccShapes
             //Denominator
             double D = (x1 - x2)*(y3 - y4) - (y1 - y2)*(x3 - x4);
 
+            //Är den parallel med linje blir den noll vilket betyder att om den är på/parallell med linje från inuti shapen så blir det 0 vilket är fel.
+            
             if(D == 0)
             {return false;}
 

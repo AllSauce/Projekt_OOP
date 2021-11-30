@@ -9,8 +9,10 @@ namespace ThiccShapes
         Point P1;
         Point P2;
         Point P3;
+
         //Triangle represented in lines
         List<Line> lines = new List<Line>(); 
+
         //Constructor for creating triangle from input   
         public Triangle(Point p, int Perimeter, Algorithm a)
         {
@@ -32,11 +34,13 @@ namespace ThiccShapes
             lines.Add(new Line(p2, p3));
             lines.Add(new Line(p3, p1));
         }
+
         //Gets shapescore
         public override int GetShapeScore(ShapeScore sc)
         {
             return sc.GetShapeScore(1);
         }
+
         //Checks if a comppoint is inside of the triangle
         //Counts the number of times a ray casted from the Point touches the sides of the triangle
         //If it is inside the triangle it will touch once. Otherwise it will touch twice or not at all
@@ -51,20 +55,20 @@ namespace ThiccShapes
                     counter++;
                 }
             }
-            //Accounts for a special case where a point inside the triangle casts a ray that hits a vertice which would normally return false 
 
+            //Accounts for a special case where a point inside the triangle casts a ray that hits a vertice which would normally return false 
             if (p.Y == P1.Y && (p.Y > P2.Y && p.Y < P3.Y) || (p.Y < P2.Y && p.Y > P3.Y))
             {
                 if (counter == 2) return true;
                 else return false;
             }
+
             //Normal case
             else
             {
                 if (counter == 1) return true;
                 else return false;
             }
-
         }
         public override double getArea()
         {       

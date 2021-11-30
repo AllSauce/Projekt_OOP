@@ -33,7 +33,7 @@ namespace ThiccShapes
             }
             //Returns rounded answer
             return Math.Round(counter, MidpointRounding.AwayFromZero);
-;
+
         }   
     }
     

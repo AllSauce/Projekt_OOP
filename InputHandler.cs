@@ -166,7 +166,6 @@ namespace ThiccShapes
                 //Cathes if parsing fails
                 catch
                 { 
-                    
                     throw new UserInputException(stringArray[1] + " or " + stringArray[2] + " or " + stringArray[3] + " Is not an integer"); 
                 }             
             }

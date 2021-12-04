@@ -5,12 +5,13 @@ namespace ThiccShapes
     //Coordinates classes to return a score
     class ScoreGetter
     {
-        public double GetScore(string[] args)
-        {
-            //Creating instances of classes
             Inputhandler ih = new Inputhandler();
             Algorithm a = new Algorithm();
             ShapeScore sc = new ShapeScore();
+        public double GetScore(string[] args)
+        {
+            //Creating instances of classes
+            
 
             //Gets list of shapes and compPoints and from injecting input, an algorithm and a shapescore so that inputhandler can change it
             var t1 = ih.HandleInput(args, a, sc);

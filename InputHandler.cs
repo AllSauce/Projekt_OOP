@@ -55,7 +55,7 @@ namespace ThiccShapes
                 //Cathces if parsing fails
                 catch
                 {
-                    throw new UserInputException("Your input for the points is incorrect. It should follow this format: X, Y, SCORE. Each point should also be separated with a ‘;’");
+                    throw new UserInputException("Your input for the points is incorrect. It should follow this format: X, Y, SCORE. Each point should also be separated with a ‘;’");     
                 }                              
             }           
             return points;
@@ -108,8 +108,15 @@ namespace ThiccShapes
                 }
                 //Cathces if parsing fails
                 catch 
-                { 
-                    throw new UserInputException(stringArray[1] + " Is not an integer"); 
+                {
+                    try
+                    {
+                        throw new UserInputException(stringArray[1] + " Is not an integer"); 
+                    }
+                    catch 
+                    {                        
+                        throw new UserInputException("Shapescore for " + stringArray[0] + " can't be blank or null");
+                    }
                 }
             }
             
@@ -166,7 +173,10 @@ namespace ThiccShapes
                 //Cathes if parsing fails
                 catch
                 { 
+                    if (stringArray.Length == 4)
                     throw new UserInputException(stringArray[1] + " or " + stringArray[2] + " or " + stringArray[3] + " Is not an integer"); 
+                    else throw new UserInputException("Arguments for creating a shape are missing");
+                    
                 }             
             }
             return Shapes;

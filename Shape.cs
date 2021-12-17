@@ -6,7 +6,7 @@ namespace ThiccShapes
     public abstract class Shape
     {   
         //Every shape is represented in a list of triangles
-        public List<Triangle> triangles;
+        protected List<Triangle> triangles;
 
         //Centerpoint of the shape
         protected Point centerPoint;

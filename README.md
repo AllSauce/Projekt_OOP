@@ -27,7 +27,7 @@
 
  3. Change the directory to the this repository (or folder with the files if you selectively downloaded).
 
-    In between comment here. If you are not familiar `cd`, follow this: [cd command Guide](https://www.geeksforgeeks.org/cd-cmd-command/) 
+  In between comment here. If you are not familiar `cd`, follow this: [cd command Guide](https://www.geeksforgeeks.org/cd-cmd-command/) 
 
  4. Run the command `csc Program.cs`
 

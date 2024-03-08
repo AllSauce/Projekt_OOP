@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "LOH+KNG3P2GOGkyxD9b6tl41xgmlBFifECtByQN2RTLRZuPkTKuELDtO9dg3W6loerxG8J6u8Ezd8WCwFOaRrA==",
+  "dgSpecHash": "i3q2PjAqr8byy3ltvvCuVKisaecd2WAcMVMWEI+ZWWEo5Fh6Uf+43DeIFYnUbIKHeozbDbi1O4cYFhe7MYapUA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oscar\\Documents\\GitHub\\Projekt_OOP\\ThiccShapes.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Manxhuka\\Documents\\GitHub\\Projekt_OOP\\ThiccShapes.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Manxhuka\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Manxhuka\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Manxhuka\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Manxhuka\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
   "logs": []
 }
